@@ -3,7 +3,8 @@
 # Copyright (c) 2020 TytusDb Team
 
 
-import ListaBaseDatos
+from storage.Hash.storage import ListaBaseDatos
+
 import os
 import re
 import csv

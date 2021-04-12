@@ -3,8 +3,9 @@
 # Copyright (c) 2020 TytusDb Team
 
 
-import Tabla
-import serealizar
+from storage.Hash.storage import Tabla
+from storage.Hash.storage import serealizar
+
 import os
 import re
 

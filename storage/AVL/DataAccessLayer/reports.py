@@ -5,8 +5,8 @@
 
 
 import os
-from DataAccessLayer.handler import Handler
-from DataAccessLayer.tree_graph import TreeGraph
+from storage.AVL.DataAccessLayer.handler import Handler
+from storage.AVL.DataAccessLayer.tree_graph import TreeGraph
 
 
 def graphicTables(database: str):

@@ -3,7 +3,8 @@
 # Copyright (c) 2020 TytusDb Team
 
 
-import BaseDatos as DB
+from storage.Hash.storage import BaseDatos as DB
+
 import os
 import shutil
 

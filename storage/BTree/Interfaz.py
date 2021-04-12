@@ -6,7 +6,8 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from PIL import Image, ImageTk
-import BMode as B
+
+from storage.BTree import BMode as B
 
 
 def runInterface():
@@ -41,7 +42,7 @@ class PP:
         self.FrameInicial = Frame(height=500, width=800)
         self.FrameInicial.config(bg="#37474f")
         self.FrameInicial.pack(padx=25, pady=25)
-        self.image = PhotoImage(file='docs/img/usac.png')
+        self.image = PhotoImage(file='storage/BTree/docs/img/usac.png')
         Label(self.FrameInicial, image=self.image,
               bg="#37474f").place(x=230, y=70)
 
@@ -1666,7 +1667,7 @@ class PP:
         self.Acerca = Frame(height=500, width=800)
         self.Acerca.config(bg="#37474f")
         self.Acerca.pack(padx=15, pady=15)
-        self.t3 = PhotoImage(file="docs/img/t3.png")
+        self.t3 = PhotoImage(file="storage/BTree/docs/img/t3.png")
         Label(self.Acerca, image=self.t3, bg="#37474f").place(x=575, y=300)
         Label(self.Acerca, text="Tytus 2020", font=("Times New Roman", 40),
               fg="#ffffff", bg="#37474f").place(x=250, y=10)

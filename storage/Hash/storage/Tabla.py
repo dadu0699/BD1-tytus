@@ -8,7 +8,7 @@ import subprocess
 
 
 class Nodo(object):
-    
+
     def __init__(self, datos, primaria, posicion):
         self.primaria = ''
         self.datos = datos
@@ -101,9 +101,11 @@ class Tabla(object):
             Se va a verificar el tipo de ordenamiento, si sera por int o para string
             '''
             if self.tipoPrimaria == 'int':
-                self.vector[posicion] = self.OrdenarBurbuja(self.vector[posicion])
+                self.vector[posicion] = self.OrdenarBurbuja(
+                    self.vector[posicion])
             else:
-                self.vector[posicion] = self.OrdenarBurbujaToAscii(self.vector[posicion])
+                self.vector[posicion] = self.OrdenarBurbujaToAscii(
+                    self.vector[posicion])
 
             self.factorCarga = self.elementos / self.tamano
 
@@ -151,7 +153,8 @@ class Tabla(object):
             else:
                 print('Indice:', indice, 'Contenido:', end=' ')
                 for j in i:
-                    print('{Primaria:', j.primaria, 'Tupla:', str(j.datos) + '}', end=' ')
+                    print('{Primaria:', j.primaria, 'Tupla:',
+                          str(j.datos) + '}', end=' ')
                 print('')
             indice += 1
 
@@ -347,7 +350,8 @@ class Tabla(object):
                     return 4
                 if not self.Existe(self.vector[indice], primaria):
                     return 4
-                elemento = self.BusquedaBinariaDevlviendoNodo(self.vector[indice], primaria)
+                elemento = self.BusquedaBinariaDevlviendoNodo(
+                    self.vector[indice], primaria)
                 indiceInterno = self.vector[indice].index(elemento)
                 listaNueva = elemento.datos[:]
                 for i in keys:
@@ -365,7 +369,8 @@ class Tabla(object):
                     return 4
                 if not self.ExisteToAscii(self.vector[indice], primaria):
                     return 4
-                elemento = self.BuscandoNodoToAscii(self.vector[indice], primaria)
+                elemento = self.BuscandoNodoToAscii(
+                    self.vector[indice], primaria)
                 indiceInterno = self.vector[indice].index(elemento)
                 listaNueva = elemento.datos[:]
                 for i in keys:
@@ -389,7 +394,6 @@ class Tabla(object):
                 self.vector[indice] = None
                 self.elementos -= 1
             return retorno
-
 
     def extractTable(self):
         lista = []
@@ -419,10 +423,11 @@ class Tabla(object):
             return 1
 
     def Grafico(self):
-        path="data/graph"
+        path = "data/graph"
         try:
             os.mkdir(path)
-        except: pass
+        except:
+            pass
 
         file = open(path+'/hash.dot', "w")
         file.write("digraph grafica{" + os.linesep)
@@ -457,15 +462,16 @@ class Tabla(object):
                                 listaNodos[i + 1].primaria).replace(' ', '').replace('-', 'y') + ':n;' + os.linesep)
 
             else:
-                file.write('nodeNone' + str(contador) + ' [shape=plaintext, label="None", width=0.5]' + os.linesep)
-                file.write('vector:f' + str(contador) + ' -> nodeNone' + str(contador) + os.linesep)
+                file.write('nodeNone' + str(contador) +
+                           ' [shape=plaintext, label="None", width=0.5]' + os.linesep)
+                file.write('vector:f' + str(contador) +
+                           ' -> nodeNone' + str(contador) + os.linesep)
             contador += 1
 
         file.write(' }' + os.linesep)
         file.close()
         subprocess.call('dot -Tpng data/graph/hash.dot -o data/graph/hash.png')
         os.remove('data/graph/hash.dot')
-
 
     def alterAddColumn(self, default):
         try:
@@ -608,5 +614,3 @@ class Tabla(object):
             return listaRetorno
         except:
             return []
-
-

@@ -1,5 +1,5 @@
-from ISAM import ISAM
-from ISAM import Tuple
+from storage.ISAM.ISAM import ISAM
+from storage.ISAM.ISAM import Tuple
 
 
 class Table:

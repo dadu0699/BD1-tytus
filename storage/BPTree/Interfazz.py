@@ -2,8 +2,8 @@
 # Released under MIT License
 # Copyright (c) 2020 TytusDb Team
 
-import BPlusMode as Storage
-import BplusTree
+from storage.BPTree import BPlusMode as Storage
+from storage.BPTree import BplusTree
 
 import tkinter
 from tkinter import *

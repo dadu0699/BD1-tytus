@@ -2,8 +2,8 @@
 # License:  Released under MIT License
 # Notice:   Copyright (c) 2020 TytusDB Team
 
-import Estructura_ArbolB as bt
-import Serializable as serializar
+from storage.BTree import Estructura_ArbolB as bt
+from storage.BTree import Serializable as serializar
 import csv
 
 

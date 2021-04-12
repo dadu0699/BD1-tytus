@@ -2,9 +2,9 @@
 # Released under MIT License
 # Copyright (c) 2020 TytusDb Team
 
-import AVLTree
-import BplusTree
-import Serializable as serializable
+from storage.BPTree import AVLTree
+from storage.BPTree import BplusTree
+from storage.BPTree import Serializable as serializable
 
 import os
 import pickle

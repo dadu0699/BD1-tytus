@@ -4,9 +4,9 @@
 # Developers: SG#16
 
 
-from BusinessLayer.database_module import DatabaseModule
-from BusinessLayer.table_module import TableModule
-from BusinessLayer.tuple_module import TupleModule
+from storage.AVL.BusinessLayer.database_module import DatabaseModule
+from storage.AVL.BusinessLayer.table_module import TableModule
+from storage.AVL.BusinessLayer.tuple_module import TupleModule
 
 DB = DatabaseModule()
 TBL = TableModule()
