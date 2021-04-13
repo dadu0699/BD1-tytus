@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import scrolledtext
+from pandas.core.frame import DataFrame
 from prettytable import PrettyTable
 
 from parserT28.utils.decorators import singleton
@@ -10,7 +11,10 @@ from parserT28.utils.decorators import singleton
 class DataWindow(object):
     def __init__(self):
         self._console = None
+
         self._data = ''
+        self._headers = []
+        self._rows = []
 
     @property
     def console(self):
@@ -19,6 +23,19 @@ class DataWindow(object):
     @property
     def data(self):
         return self._data
+
+    @property
+    def headers(self):
+        return self._headers
+
+    @property
+    def rows(self):
+        return self._rows
+
+    def clearProperties(self):
+        self._data = ''
+        self._headers = []
+        self._rows = []
 
     @console.setter
     def console(self, frame):
@@ -49,11 +66,43 @@ class DataWindow(object):
         for row in rows:
             table.add_row(row)
         if self._console is None:
+            self._headers = headers
+            for row in rows:
+                self._rows.append(row)
             self._data = f"{table}\n\n"
+
             print(INSERT, f"{table}\n\n")
         else:
             self._data = f"{table}\n\n"
             self._console.insert(INSERT, f"{table}\n\n")
+
+    def format_df(self, df: DataFrame):
+        table = PrettyTable([''] + list(df.columns))
+        self._headers = list(df.columns)
+
+        for row in df.itertuples():
+            table.add_row(row)
+            self._rows.append(row)
+
+        self._data = f"{str(table)}\n\n"
+        return str(table)
+
+    def format_table_list(self, array: list):
+        try:
+            table_value = PrettyTable(array[0])
+            table_value.add_row(array[1])
+
+            self._headers = array[0]
+
+            for row in array[1]:
+                self._rows.append(row)
+
+            self._data = f"{str(table_value)}\n\n"
+
+            return str(table_value)
+        except:
+            desc = "FATAL ERROR, Funciones Select"
+            # ErrorController().add(34, 'Execution', desc, 0, 0)
 
     def clearConsole(self):
         self._console.delete('1.0', END)

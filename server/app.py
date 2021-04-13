@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from server.routes.index import init_routes
+from routes.index import init_routes
 
 app = Flask(__name__)
 CORS(app)
