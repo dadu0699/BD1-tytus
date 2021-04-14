@@ -1,11 +1,15 @@
 from flask import Blueprint, Response, jsonify, request
 from flask_cors import CORS
-import simplejson as json
+import json
 
 from parserT28.parse import execution
 
-dbs = Blueprint('dbs', __name__)
 
+def obj_dict(obj):
+    return obj.__dict__
+
+
+dbs = Blueprint('dbs', __name__)
 CORS(dbs)
 
 
@@ -15,10 +19,13 @@ def create(name):
         query = f'CREATE DATABASE IF NOT EXISTS {name};'
 
         result = execution(query)
-        result = json.loads(json.dumps(result, ignore_nan=True))
+        dataFile = json.dumps(
+            result,
+            default=obj_dict
+        )
+        parsedJson = (json.loads(dataFile))
 
-        return {"result": result, "ok": True}, 200
-
+        return {"result": parsedJson, "ok": True}, 200
     except Exception as e:
         print(e)
         return {"ok": False}, 400
@@ -30,11 +37,13 @@ def showAll():
         query = f'SHOW DATABASES;'
 
         result = execution(query)
-        result = json.loads(json.dumps(result, ignore_nan=True))
+        dataFile = json.dumps(
+            result,
+            default=obj_dict
+        )
+        parsedJson = (json.loads(dataFile))
 
-        print(result['querys'][0][1])
-
-        return {"result": result['querys'][0][1], "ok": True}, 200
+        return {"result": parsedJson['querys'][0][1], "ok": True}, 200
 
     except Exception as e:
         print(e)

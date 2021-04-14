@@ -16,7 +16,7 @@ class DataController(object):
         :return: Returns list of databases
         """
         databases = []
-        for i in range(1, 6):
+        for i in range(1, 7):
             mode = data_mode(i)
             if mode:
                 databases.extend(mode.showDatabases())

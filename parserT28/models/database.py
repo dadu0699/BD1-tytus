@@ -1,7 +1,7 @@
 class Database(object):
     def __init__(self, name):
         self._name = name
-        self._mode = 1
+        self._mode = 6
         self._tables = []
 
     def __str__(self):

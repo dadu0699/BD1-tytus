@@ -53,8 +53,8 @@ class DataWindow(object):
         x_scroll.grid(column=1, row=5, sticky='NS', ipadx=255)
 
     def consoleText(self, data):
-
         if self._console is None:
+            self._data = f"{data}\n\n"
             print(f"{data}\n\n")
         else:
             self._data = f"{data}\n\n"
