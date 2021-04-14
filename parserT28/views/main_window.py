@@ -223,8 +223,6 @@ class MainWindow(object):
                         DataWindow().consoleText(format_table_list(result))
                 else:
                     inst.process(0)
-
-                print(DataWindow().data)
             # ---------- TEST ---------
 
     def generar_tac(self):

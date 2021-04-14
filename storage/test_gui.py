@@ -16,7 +16,7 @@ def GUI(mode):
         # bPTreeGUI.start()
         pass
     elif mode == 4:
-        #vectorBases = storageISAM.showDatabases()
+        # vectorBases = storageISAM.showDatabases()
         # isamGUI.PantallaBD(vectorBases)
         pass
     elif mode == 5:

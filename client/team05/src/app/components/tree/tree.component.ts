@@ -14,6 +14,7 @@ export class TreeComponent implements OnInit {
   data: any
   array_database_service: any[]
   array_tabas_service = []
+  array_result: [] = []
 
   constructor(private databaseservice: DatabaseService) {
   }
@@ -37,7 +38,6 @@ export class TreeComponent implements OnInit {
   }
 
   consumir_servicio() {
-    var array_result: []
     this.databaseservice.getData_treedatabase().subscribe(
       res => {
 
@@ -46,79 +46,78 @@ export class TreeComponent implements OnInit {
         //console.log(this.data)
         //console.log("-------------------------")
         //console.log("array_result:")
-        array_result = this.data.result
-        //console.log(array_result)
+        this.array_result = this.data.result
         //console.log("-------------------------")
         //console.log("elementos:")
 
-        var array_tmp = []
+        // var array_tmp = []
 
-        const it = (obj, tabSize = 0) => {
-          for (let k in obj) {
-            const v = obj[k];
-            if (Object.prototype.toString.call(v) === '[object Object]') {
-              console.log(`${k}:`);
-              it(v, tabSize + 1);
-            } else {
-              //console.log(`${'\t'.repeat(tabSize)}${k}`);
-              array_tmp.push(`${'\t'.repeat(tabSize)}${k}`)
-            }
-          }
-          return;
-        };
-
-
-        it(array_result);
-        //alert(array_tmp)
-
-        console.log("respuesta del servidor: (basedatos)", array_tmp)
-        this.array_database_service = array_tmp
-
-        var a = []
-        for (const key in array_result) {
-          if (Object.prototype.hasOwnProperty.call(array_result, key)) {
-            const element = array_result[key];
-            //console.log(element)
-            a.push(element)
-          }
-        }
-        //alert("mira la consola")
-        //console.log(a)
+        // const it = (obj, tabSize = 0) => {
+        //   for (let k in obj) {
+        //     const v = obj[k];
+        //     if (Object.prototype.toString.call(v) === '[object Object]') {
+        //       console.log(`${k}:`);
+        //       it(v, tabSize + 1);
+        //     } else {
+        //       //console.log(`${'\t'.repeat(tabSize)}${k}`);
+        //       array_tmp.push(`${'\t'.repeat(tabSize)}${k}`)
+        //     }
+        //   }
+        //   return;
+        // };
 
 
-        let item_db = document.getElementById("db")
-        item_db.innerHTML = ""                        //limpiando los datos almacenados 
+        // it(array_result);
+        // //alert(array_tmp)
 
-        let array = this.array_database_service
+        // console.log("respuesta del servidor: (basedatos)", array_tmp)
+        // this.array_database_service = array_tmp
 
-        document.getElementById("num_db").innerText = String(array.length)  //  actualizando el numero de base de datos en el navegador
+        // var a = []
+        // for (const key in array_result) {
+        //   if (Object.prototype.hasOwnProperty.call(array_result, key)) {
+        //     const element = array_result[key];
+        //     //console.log(element)
+        //     a.push(element)
+        //   }
+        // }
+        // //alert("mira la consola")
+        // //console.log(a)
 
-        for (let i = 0; i < array.length; i++) {
 
-          item_db.innerHTML +=
-            '<li> <span class="caret caret-down"> <i class="fa fa-database"></i> ' + array[i] + ' </span>' +
-              '<ul class="animacion activada">' +
-                '<li><span class="caret caret-down"><i class="fa fa-folder-o"></i> Tablas [<a id ="t_' + array[i] + '">0</a>]</span>' +
-                  '<ul class="animacion activada" id="' + array[i] + '"></ul>' +
-                '</li>'+
-              '</ul>'+
-            '</li>'
+        // let item_db = document.getElementById("db")
+        // item_db.innerHTML = ""                        //limpiando los datos almacenados
 
-          /*----------------------------- INGRESANDO TABLAS----------------------------------------*/
+        // let array = this.array_database_service
 
-          let item_tabla = document.getElementById(array[i])
-          let respuesta = a[i]                                         // array que contiene las tablas 
+        // document.getElementById("num_db").innerText = String(array.length)  //  actualizando el numero de base de datos en el navegador
 
-          document.getElementById('t_' + array[i]).innerText = String(respuesta.length)   // actualiza el numero de tabla en cada base de datos
+        // for (let i = 0; i < array.length; i++) {
 
-          for (let i = 0; i < respuesta.length; i++) {
-            item_tabla.innerHTML += '<li><i class="fa fa-table"></i> ' + respuesta[i] + '</li>'
-          }
-          /*----------------------------------------------------------------------------------------------------*/
+        //   item_db.innerHTML +=
+        //     '<li> <span class="caret caret-down"> <i class="fa fa-database"></i> ' + array[i] + ' </span>' +
+        //     '<ul class="animacion activada">' +
+        //     '<li><span class="caret caret-down"><i class="fa fa-folder-o"></i> Tablas [<a id ="t_' + array[i] + '">0</a>]</span>' +
+        //     '<ul class="animacion activada" id="' + array[i] + '"></ul>' +
+        //     '</li>' +
+        //     '</ul>' +
+        //     '</li>'
 
-        }
-        this.funcion1()
-        //alert("listo...")
+        //   /*----------------------------- INGRESANDO TABLAS----------------------------------------*/
+
+        //   let item_tabla = document.getElementById(array[i])
+        //   let respuesta = a[i]                                         // array que contiene las tablas
+
+        //   document.getElementById('t_' + array[i]).innerText = String(respuesta.length)   // actualiza el numero de tabla en cada base de datos
+
+        //   for (let i = 0; i < respuesta.length; i++) {
+        //     item_tabla.innerHTML += '<li><i class="fa fa-table"></i> ' + respuesta[i] + '</li>'
+        //   }
+        //   /*----------------------------------------------------------------------------------------------------*/
+
+        // }
+        // this.funcion1()
+        // //alert("listo...")
 
       }, err => {
         alert("error al traer la data al arbol")

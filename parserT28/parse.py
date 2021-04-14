@@ -25,6 +25,7 @@ def execution(input):
                     querys.append([DataWindow().headers, [DataWindow().rows]])
             else:
                 inst.process(0)
+                querys.append([DataWindow().headers, DataWindow().rows])
             messages.append(DataWindow().data)
 
     obj = {

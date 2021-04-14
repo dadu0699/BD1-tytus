@@ -1,13 +1,16 @@
+from parserT28.views.data_window import DataWindow
+from storage.mode import mode as data_mode
+from parserT28.controllers.symbol_table import SymbolTable
+from parserT28.controllers.error_controller import ErrorController
+from parserT28.models.column import Column
+from parserT28.models.table import Table
+from parserT28.models.database import Database
+from parserT28.utils.decorators import singleton
+
+import os
 import json
 
-from parserT28.utils.decorators import singleton
-from parserT28.models.database import Database
-from parserT28.models.table import Table
-from parserT28.models.column import Column
-from parserT28.controllers.error_controller import ErrorController
-from parserT28.controllers.symbol_table import SymbolTable
-from storage.mode import mode as data_mode
-from parserT28.views.data_window import DataWindow
+path = 'data/json/'
 
 
 @singleton
@@ -57,7 +60,16 @@ class TypeChecker(object):
         except IOError:
             print('Error: File does not appear to exist.')
 
+    def initCheck(self):
+        if not os.path.exists('data'):
+            os.makedirs('data')
+
+        if not os.path.exists('data/json'):
+            os.makedirs('data/json')
+
     def writeFile(self):
+        self.initCheck()
+
         try:
             with open('data/json/typeChecker.json', 'w') as f:
                 dataFile = json.dumps(
