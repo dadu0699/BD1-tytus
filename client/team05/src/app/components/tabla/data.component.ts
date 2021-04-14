@@ -47,19 +47,34 @@ export class DataComponent implements OnInit, OnDestroy {
 
   // tslint:disable-next-line:typedef
   refresh() {
+    this.anuncio = [];
 
     // tslint:disable-next-line:triple-equals
     if (this.message.result.messages.length > 0) {
-      this.anuncio = this.message.result.messages[0];
+      const array1 = this.anuncio;
+      const array2 = this.message.result.messages;
+      this.anuncio = array1.concat(array2);
       // tslint:disable-next-line:triple-equals
-    } else if (this.message.result.lexical.length > 0) {
-      this.anuncio = this.message.result.lexical[0];
+    }
+
+    if (this.message.result.lexical.length > 0) {
+      const array1 = this.anuncio;
+      const array2 = this.message.result.lexical;
+      this.anuncio = array1.concat(array2);
       // tslint:disable-next-line:triple-equals
-    } else if (this.message.result.postgres.length > 0) {
-      this.anuncio = this.message.result.postgres[0];
+    }
+
+    if (this.message.result.postgres.length > 0) {
+      const array1 = this.anuncio;
+      const array2 = this.message.result.postgres;
+      this.anuncio = array1.concat(array2);
       // tslint:disable-next-line:triple-equals
-    } else if (this.message.result.semantic.length > 0) {
-      this.anuncio = this.message.result.semantic[0];
+    }
+
+    if (this.message.result.semantic.length > 0) {
+      const array1 = this.anuncio;
+      const array2 = this.message.result.semantic;
+      this.anuncio = array1.concat(array2);
       // tslint:disable-next-line:triple-equals
     }
 

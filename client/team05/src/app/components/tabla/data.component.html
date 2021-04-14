@@ -2,7 +2,7 @@
   <table id="users2">
     <tr>
       <th style="margin-bottom: 2rem;white-space:pre-wrap;">
-        {{anuncio}}
+        <pre>{{anuncio}}</pre>
       </th>
     </tr>
   </table>
@@ -13,13 +13,13 @@
 <div class="mat-elevation-z8">
   <table id="users">
     <tr>
-      <th *ngFor="let column of headers" style="margin-bottom: 2rem;white-space:pre-wrap;">
+      <th *ngFor="let column of headers">
         {{column}}
       </th>
     </tr>
 
     <tr *ngFor="let row of rows">
-      <td *ngFor="let column of row" style="margin-bottom: 2rem;white-space:pre-wrap;">
+      <td *ngFor="let column of row">
         {{column}}
       </td>
     </tr>
