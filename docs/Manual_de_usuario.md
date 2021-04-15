@@ -1,3 +1,5 @@
+# Manual de usuario
+
 ## Librerias
 
 - pip install PIL
