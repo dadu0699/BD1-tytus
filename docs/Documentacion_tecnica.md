@@ -11,6 +11,7 @@
 - [Angular y Electrón](#angularElectron)
 - [Instalador](#instalador)
 - [Instalador del Servidor](#instaladorServer) 
+- [Librerías y Frameworks](#librerias)
 
 
 ## Administrador de almacenamiento<a name="adminStorage"></a>
@@ -118,3 +119,22 @@ pyinstaller main.py
 ```
 
 Luego se puede comprimir la carpeta para poder mandarla al cliente y ejecutar el archivo .exe que se genero. 
+
+## Librerías y Frameworks <a name="librerias"></a>
+
+
+### Librerías de Python 
+
+- pip install PIL
+- pip install pillow
+- pip install flask
+- pip install flask-cors
+- pip install pandas
+- pip install prettytable
+
+### Librerías de Node
+
+- Electron: Electron Packager "^15.2.0"
+- Angular: "^11.0.3"
+- Jquery: "^3.5.1"
+- CodeMirror: "^5.58.3"
