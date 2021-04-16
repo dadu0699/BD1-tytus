@@ -22,6 +22,9 @@ Este componente es el encargado de gestionar, archivar, organizar y compartir lo
 
 ## Administrador de la base de datos<a name="adminDB"></a>
 ### Servidor<a name="server"></a>
+Es un servidor http. Se debe seleccionar un puerto adecuado que no tenga conflictos con otros servidores. Se tiene un usuario admin y su contraseña. Además, se puede crear n usuarios configurando el acceso a las bases de datos.
 ### Cliente<a name="client"></a>
+Es un cliente que para algunos equipos será web y para otros será una aplicación de escritorio. Este cliente se conectará al servidor y podrá hacer la mayoría de las operaciones que hace pgadmin de PostgreSQL. Dentro del cliente, cuando se navegue dentro de las diferentes bases de datos que existen se puede invocar un editor de queries.
 
 ## SQL Parser<a name="parser"></a>
+Este componente proporciona al servidor una función encargada de interpretar sentencias del subconjunto del lenguaje SQL especificado.
