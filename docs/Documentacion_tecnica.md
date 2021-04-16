@@ -9,6 +9,7 @@
     - [Cliente](#client)
 - [SQL Parser](#parser)
 - [Angular y Electrón](#angularElectron)
+- [Instalador](#instalador)
 
 
 ## Administrador de almacenamiento<a name="adminStorage"></a>
@@ -75,3 +76,20 @@ Se ejecula el script "electron" para inicializar la aplicación de Electron, con
 npm run electron
 ```
 Al ejecutar y compilar todo correctamente, ya esta lista la app.
+
+## Instalador<a name="instalador"></a>
+### Instalar el paquete de Electron
+Comando para usar en scripts npm.
+``` bash
+npm install electron-packager --save-dev
+```
+Comando para utilizar en cli.
+``` bash
+npm install electron-packager -g
+```
+
+### Construir el paquete de Windows desde la terminal
+Comando para crear el ejecutable de Windows.
+``` bash
+electron-packager ./ --overwrite --platform=win32 --arch=x64 tytusDB
+```
