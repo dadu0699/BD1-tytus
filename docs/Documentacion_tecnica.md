@@ -55,8 +55,14 @@ Componente utilizado *Grupo 28:*
 
 ## Angular y Electrón<a name="angularElectron"></a>
 ### Configurando Electrón
+Se crea un archivo Typescript llamado “main.ts” y otro de tipo JSON llamado “tsconfig.json”, donde se añade la configuración de Typescript dentro de la carpeta “electron”.
+Esta carpeta es la que se crea en la carpeta raíz de la app el cual será el back-end de Electron y es donde se va a configurar todos los eventos relacionados con Electron.
+
+Se modifica el archivo "tsconfig.json" tomando en cuenta que outDir se ubicará en "./dist" y el tipo de module que se usa es "commonjs", donde se esta montando el apartado de Electrón. Se ubica en el fichero “main.ts”, que será el encargado de lanzar nuestra app Angular, como una aplicación de Escritorio con Electrón.
 
 ### Definiendo el fichero principal de Electrón
+Primero se añade los imports necesarios y se hace la referencia a la ventana del navegador.
+También se registran algunos listener para tener las notificaciones del estado de la app, y se crea una nueva ventana de Electron para colocar nuestra aplicación Angular.
 
 ### Integrando Angular en Electrón
 
