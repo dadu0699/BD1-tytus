@@ -10,6 +10,7 @@
 - [SQL Parser](#parser)
 - [Angular y Electrón](#angularElectron)
 - [Instalador](#instalador)
+- [Instalador del Servidor](#instaladorServer) 
 
 
 ## Administrador de almacenamiento<a name="adminStorage"></a>
@@ -93,3 +94,27 @@ Comando para crear el ejecutable de Windows.
 ``` bash
 electron-packager ./ --overwrite --platform=win32 --arch=x64 tytusDB
 ```
+
+## Instalador del Servidor  <a name="instaladorServer"> </a>
+
+Para crear un ejecutable con Python necesitamos contar con Python y pip. 
+
+### Instalar PyInstaller 
+
+Comando para instalar PyInstaller con pip 
+
+``` bash
+pip install pyinstaller 
+```
+
+### Empaquetar Aplicación 
+
+Nos ubicamos en la carpeta en donde se encuentra nuestro archivo que se encarga del funcionamiento de la aplicación.
+
+Comando para generar una carpeta con el ejecutable, solo necesitamos el nombre de nuestro archivo. 
+
+``` bash
+pyinstaller main.py 
+```
+
+Luego se puede comprimir la carpeta para poder mandarla al cliente y ejecutar el archivo .exe que se genero. 
