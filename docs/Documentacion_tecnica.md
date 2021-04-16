@@ -8,6 +8,7 @@
     - [Servidor](#server)
     - [Cliente](#client)
 - [SQL Parser](#parser)
+- [Angular y Electrón](#angularElectron)
 
 
 ## Administrador de almacenamiento<a name="adminStorage"></a>
@@ -51,3 +52,12 @@ Este componente proporciona al servidor una función encargada de interpretar se
 Componente utilizado *Grupo 28:*
 - [Manual Técnico](../parserT28/docs/Manual_Tecnico.md)
 - [Manual de Usuario](../parserT28/docs/Manual_de_Usuario.md)
+
+## Angular y Electrón<a name="angularElectron"></a>
+### Configurando Electrón
+
+### Definiendo el fichero principal de Electrón
+
+### Integrando Angular en Electrón
+
+### Compilando main.ts e inicializar Electrón
