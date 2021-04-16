@@ -46,7 +46,7 @@ Componente utilizado *Grupo 5:*
 - [Manual de Usuario](../client/team05/README.md)
 
 ## SQL Parser<a name="parser"></a>
-Este componente proporciona al servidor una función encargada de interpretar sentencias del subconjunto del lenguaje SQL especificado.
+Este componente proporciona al servidor una función encargada de interpretar sentencias del subconjunto del lenguaje SQL especificado en la [sintáxis](../docs/sql_syntax/README.md).
 
 Componente utilizado *Grupo 28:*
 - [Manual Técnico](../parserT28/docs/Manual_Tecnico.md)
