@@ -65,7 +65,7 @@ Primero se añade los imports necesarios y se hace la referencia a la ventana de
 También se registran algunos listener para tener las notificaciones del estado de la app, y se crea una nueva ventana de Electron para colocar nuestra aplicación Angular.
 
 ### Integrando Angular en Electrón
-Lo que se realiza es habilidar la opción para que se integrar la aplicación de Angular dentro de Electrón. Para poder realizarlo, en la ventana del navegador esta el método llamado "loadUrl". Con ese método se carga el "index.html" de la aplicacion de Angular ya compilada.
+Lo que se realiza es habilitar la opción para que se integrar la aplicación de Angular dentro de Electrón. Para poder realizarlo, en la ventana del navegador esta el método llamado "loadUrl". Con ese método se carga el "index.html" de la aplicacion de Angular ya compilada.
 
 ### Compilando main.ts e inicializar Electrón
 Para compilar el "main.ts" a JavaScript, se crea un nuevo script dentro de la seccion de script package.json y se le da el nombre de "electron". Tambien se le da un punto de entrada de la aplicación de Electrón, especificando la propiedad "main".
