@@ -56,8 +56,8 @@ Con el fin de facilitar la interacción del usuario con el DBMS TytusDB a contin
 |  17 | Insert              | INSERT INTO tbname ( *filds* ) VALUES ( *...* ) ;  |      X     |               |               |
 |  18 | Load CSV            |            -                                       |            |       X       |   Pendiente   |
 |  19 | Extract Row         |            -                                       |            |       X       |   Pendiente   |
-|  20 | Update              | UPDATE tbname SET *...* WHERE *...* ;              |      X     |               |               |
-|  21 | Delete              | DELETE FROM tbname WHERE *...* ;                   |      X     |               |               |
+|  20 | Update              | UPDATE tbname SET *...* WHERE *...* ;              |            |       X       | En desarrollo |
+|  21 | Delete              | DELETE FROM tbname WHERE *...* ;                   |            |       X       | En desarrollo |
 |  22 | Truncate            |            -                                       |            |       X       | En desarrollo |
 |  23 | Select              | SELECT * FROM tbname;                              |      X     |               |               |
 
@@ -88,26 +88,27 @@ Algunas instrucciones poseen variaciones significativas en su sintaxis, se lista
 ###  EJEMPLOS Y RESPUESTAS<a name="ejemplo"></a>
 Con el fin de facilitar la interacción del usuario con el DBMS TytusDB a continuación se muestran ejemplos de uso y los dos tipos de respuestas que el BDMS proporciona. 
 
-- **Archivo - Crear BD**:  Se requiere el nombre de la base de datos por medio de una ventana emergente, al finalizar, el DBMS nos notificará el resultado de la forma que se muestra en la segunda imagen.
-
+- **Archivo - Crear BD**:  Se requiere el nombre de la base de datos por medio de una ventana emergente, al finalizar, el DBMS nos notificará el resultado de la forma que se muestra en la segunda imagen.  
+  
 <div align="center">
-    <img src="./assets/img/Manual_Usuario/CrearBDDialogo.PNG" width="800">
-</div>
+    <img src="./assets/img/Manual_Usuario/CrearBDDialogo.PNG" width="450">
+</div>  
+<br>
 <div align="center">
-    <img src="./assets/img/Manual_Usuario/CrearBDNotif.PNG" width="800">
+    <img src="./assets/img/Manual_Usuario/CrearBDNotif.PNG" width=450">
     <p align="center"> Notificación Emergente </p>
 </div>
 
 <br>
 
-- **Script - Crear Database**:  Se debe ingresar el script correctamente, ejecutar el código y el DBMS nos notificará el resultado de la operación por medio de la consola.
+- **Script - Crear Database**:  Se debe ingresar el script correctamente, ejecutar el código y el DBMS nos notificará el resultado de la operación por medio de la consola.  
 
 <div align="center">
-    <img src="./assets/img/Manual_Usuario/CreateDB.PNG" width="800">
+    <img src="./assets/img/Manual_Usuario/CreateDB.PNG" width="450">
 </div>  
 <br>
 <div align="center">
-    <img src="./assets/img/Manual_Usuario/CreateDBRes.PNG" width="800">
+    <img src="./assets/img/Manual_Usuario/CreateDBRes.PNG" width="450">
     <p align="center"> Notificación por Consola </p>
 </div>
 
